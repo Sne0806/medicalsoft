@@ -5,11 +5,16 @@
  */
 package medicalsoft;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author estudiante
  */
 public class Persona {
+
     private String nombre;
     private String apellido;
     private String fecha_de_nacimiento;
@@ -92,8 +97,33 @@ public class Persona {
         this.celular = celular;
     }
 
-    public Persona (String nom, String ape) {
+    public Persona(String nom, String ape) {
         this.nombre = nom;
         this.apellido = ape;
+    }
+
+    public int getEdad() {
+        //return 10; 
+
+// 01/01/2000
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fechaNac = LocalDate.parse("08/12/2001", fmt);
+        LocalDate ahora = LocalDate.now();
+
+        Period periodo = Period.between(fechaNac, ahora);
+        System.out.printf("Tu edad es: %s años, %s meses y %s días",
+                periodo.getYears(), periodo.getMonths(), periodo.getDays());
+        return 0;
+    }
+
+    //Validar edad
+    public boolean validateEmail() {
+        return true;
+    }
+
+    //Correo Electronico
+    public String getFullname() {
+        return this.nombre + "" + this.apellido;
+
     }
 }

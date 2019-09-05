@@ -16,10 +16,11 @@ public class Medicalsoft {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Medico primerMedico=new Medico("Sneider", "Mejia"); 
-        //primerMedico.nombre= "Sneider"; 
-        System.out.println(primerMedico.getNombre());
-        
+        Medico medico1 = new Medico("",""); 
+        medico1.setNombre("Sneider");
+        medico1.setApellido(" Mejia"); 
+        medico1.setFecha_de_nacimiento("08/12/2001");
+        System.out.println(" El medico es " +medico1.getFullname()+ " y su edad es: " +medico1.getEdad());
     }
 
     
