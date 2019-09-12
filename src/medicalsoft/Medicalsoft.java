@@ -19,7 +19,7 @@ public class Medicalsoft {
         Medico medico1 = new Medico("",""); 
         medico1.setNombre("Sneider");
         medico1.setApellido(" Mejia"); 
-        medico1.setFecha_de_nacimiento("08/12/2001");
+        medico1.setFecha_de_nacimiento("08/12git status/2001");
         System.out.println(" El medico es " +medico1.getFullname()+ " y su edad es: " +medico1.getEdad());
     }
 

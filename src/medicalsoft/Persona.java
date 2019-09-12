@@ -8,6 +8,8 @@ package medicalsoft;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -118,7 +120,9 @@ public class Persona {
 
     //Validar edad
     public boolean validateEmail() {
-        return true;
+        Pattern p = Pattern.compile("[-\\w\\.]+@[\\.\\]+\\.\\w+");
+        Matcher m = p.matcher(email); 
+        return m.matches();
     }
 
     //Correo Electronico
